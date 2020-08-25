@@ -29,7 +29,7 @@ struct ConfigXML
     int32   ReceMax;
     int32   SendOne;
     int32   SendMax;
-    int32   HeartTime;  //心跳时间
+    int32   HeartTime;  //多少秒没收到服务端的心跳包..
     int32   AutoTime;   //自动重连时间
     FString SafeCode;
     uint8   Head[ 2 ];
@@ -67,8 +67,8 @@ struct S_SERVER_BASE
     bool   is_Sending;
     bool   is_SendCompleted;
 
-    int32   time_Heart;
-    int32   time_HeartTime;
+    int32   time_Heart;      //上次发送心跳包的时间
+    int32   time_HeartTime;  //接收心跳包
     int32   time_AutoConnect;
     FString md5;
 
